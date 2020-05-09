@@ -157,11 +157,11 @@
           }
         ],
         url: {
-          list: "/org.jeecg.modules/ydkjMallStoreCategory/list",
-          delete: "/org.jeecg.modules/ydkjMallStoreCategory/delete",
-          deleteBatch: "/org.jeecg.modules/ydkjMallStoreCategory/deleteBatch",
-          exportXlsUrl: "/org.jeecg.modules/ydkjMallStoreCategory/exportXls",
-          importExcelUrl: "org.jeecg.modules/ydkjMallStoreCategory/importExcel",
+          list: "/mall/ydkjMallStoreCategory/list",
+          delete: "/mall/ydkjMallStoreCategory/delete",
+          deleteBatch: "/mall/ydkjMallStoreCategory/deleteBatch",
+          exportXlsUrl: "/mall/ydkjMallStoreCategory/exportXls",
+          importExcelUrl: "/mall/ydkjMallStoreCategory/importExcel",
         },
         dictOptions:{},
       }

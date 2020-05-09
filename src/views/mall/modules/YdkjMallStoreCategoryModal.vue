@@ -84,8 +84,8 @@
           ]},
         },
         url: {
-          add: "/org.jeecg.modules/ydkjMallStoreCategory/add",
-          edit: "/org.jeecg.modules/ydkjMallStoreCategory/edit",
+          add: "/mall/ydkjMallStoreCategory/add",
+          edit: "/mall/ydkjMallStoreCategory/edit",
         }
       }
     },

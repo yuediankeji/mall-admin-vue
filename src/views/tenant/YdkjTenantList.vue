@@ -13,7 +13,7 @@
     <!-- 操作按钮区域 -->
     <div class="table-operator">
       <a-button @click="handleAdd" type="primary" icon="plus">新增</a-button>
-      <a-button type="primary" icon="download" @click="handleExportXls('租户表')">导出</a-button>
+      <a-button type="primary" icon="download" @click="handleExportXls('商户')">导出</a-button>
       <a-upload name="file" :showUploadList="false" :multiple="false" :headers="tokenHeader" :action="importExcelUrl" @change="handleImportExcel">
         <a-button type="primary" icon="import">导入</a-button>
       </a-upload>
@@ -84,24 +84,24 @@
       </a-table>
     </div>
 
-    <tenant-modal ref="modalForm" @ok="modalFormOk"></tenant-modal>
+    <ydkjTenant-modal ref="modalForm" @ok="modalFormOk"></ydkjTenant-modal>
   </a-card>
 </template>
 
 <script>
 
   import { JeecgListMixin } from '@/mixins/JeecgListMixin'
-  import TenantModal from './modules/TenantModal'
+  import YdkjTenantModal from './modules/YdkjTenantModal'
 
   export default {
-    name: "TenantList",
+    name: "YdkjTenantList",
     mixins:[JeecgListMixin],
     components: {
-      TenantModal
+      YdkjTenantModal
     },
     data () {
       return {
-        description: '租户表管理页面',
+        description: '商户管理页面',
         // 表头
         columns: [
           {
@@ -115,19 +115,60 @@
             }
           },
           {
-            title:'租户',
+            title:'商户',
             align:"center",
             dataIndex: 'tenant'
           },
           {
-            title:'用户名',
+            title:'公司名称',
             align:"center",
-            dataIndex: 'username'
+            dataIndex: 'company'
           },
           {
-            title:'用户密码',
+            title:'公司联系方式',
             align:"center",
-            dataIndex: 'password'
+            dataIndex: 'companyLink'
+          },
+          {
+            title:'公司地址',
+            align:"center",
+            dataIndex: 'companyAddess'
+          },
+          {
+            title:'用户账号',
+            align:"center",
+            dataIndex: 'userName'
+          },
+          {
+            title:'用户姓名',
+            align:"center",
+            dataIndex: 'realName'
+          },
+          {
+            title:'创建人',
+            align:"center",
+            dataIndex: 'createBy'
+          },
+          {
+            title:'创建时间',
+            align:"center",
+            dataIndex: 'createTime',
+            customRender:function (text) {
+              return !text?"":(text.length>10?text.substr(0,10):text)
+            }
+          },
+          {
+            title:'更新人',
+            align:"center",
+            dataIndex: 'updateBy'
+          },
+          {
+            title:'更新时间',
+            align:"center",
+            dataIndex: 'updateTime',
+            customRender:function (text) {
+              return !text?"":(text.length>10?text.substr(0,10):text)
+            }
           },
           {
             title: '操作',
@@ -137,11 +178,11 @@
           }
         ],
         url: {
-          list: "/org.jeecg.modules/tenant/list",
-          delete: "/org.jeecg.modules/tenant/delete",
-          deleteBatch: "/org.jeecg.modules/tenant/deleteBatch",
-          exportXlsUrl: "/org.jeecg.modules/tenant/exportXls",
-          importExcelUrl: "org.jeecg.modules/tenant/importExcel",
+          list: "/org.mall.modules/ydkjTenant/list",
+          delete: "/org.mall.modules/ydkjTenant/delete",
+          deleteBatch: "/org.mall.modules/ydkjTenant/deleteBatch",
+          exportXlsUrl: "/org.mall.modules/ydkjTenant/exportXls",
+          importExcelUrl: "org.mall.modules/ydkjTenant/importExcel",
         },
         dictOptions:{},
       }

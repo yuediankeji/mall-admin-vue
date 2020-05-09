@@ -230,8 +230,8 @@
           ]},
         },
         url: {
-          add: "/org.jeecg.modules/ydkjMallStoreProduct/add",
-          edit: "/org.jeecg.modules/ydkjMallStoreProduct/edit",
+          add: "/mall/ydkjMallStoreProduct/add",
+          edit: "/mall/ydkjMallStoreProduct/edit",
         }
       }
     },
